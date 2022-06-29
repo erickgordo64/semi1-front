@@ -11,4 +11,4 @@ RUN npm run build --prod
 FROM nginx:1.17.1-alpine AS prod-stage
 COPY --from=build /app/dist/Front /usr/share/ngnix/html
 EXPOSE 4200
-CMD ["ngins","-g","daemon off;"]
+CMD ["nginx","-g","daemon off;"]
