@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="https://cdn.svgporn.com/logos/gusto.svg" width="30" height="30" class="d-inline-block align-top" alt=""
+        loading="lazy">
+      U-Storage
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <button type="button" (click)="gotoEditar()" class="btn btn-dark">Perfil</button>
+          </li>
+          
+          <li ngbDropdown  class="nav-item dropdown">
+            <a ngbDropdownToggle class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">Publicacion</a>
+            <ul ngbDropdownMenu  class="dropdown-menu">
+              <li> <button  type="button" (click)="crearPublicacion()" class="btn btn-light">Crear</button></li>
+              <li> <button  type="button" (click)="verPublicacion()" class="btn btn-light">Ver</button></li>
+        
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <form class="form-inline my-2 my-lg-0">
+        <button type="button"  (click)="cerrarSesion()" class="btn btn-dark">Cerrar Sesion</button>
+      </form>
+    </div>
+  </nav>

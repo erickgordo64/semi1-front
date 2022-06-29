@@ -1,0 +1,59 @@
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+
+    <div class="container justify-content-center">
+        <a class="navbar-brand" href="#">
+            <img src="https://cdn.svgporn.com/logos/gusto.svg" width="30" height="30" alt="">
+        </a>
+    </div>
+</nav>
+<div class="container mt-5">
+    <div class="row mt-5 justify-content-center">
+
+        <div class="col-6">
+            <div class="form-group text-center col align-self-center col-12 col-sm-12 col-md-4 col-lg-4" style=" margin-left: auto;
+            margin-right: auto">
+                <h2>Sign In</h2>
+            </div>
+            <form>
+                <div class="form-group text-center col align-self-center col-12 col-sm-12 col-md-4 col-lg-4" style=" margin-left: auto;
+                margin-right: auto">
+                    <img [src]="imgURL" width="200" height="200" alt="imgUserProfile" class="img-thumbnail" style=" margin-left: auto;
+            margin-right: auto">
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Username</label>
+                    <input name="username" [(ngModel)]="email" placeholder="username" type="email" class="form-control"
+                        id="exampleInputEmail1" aria-describedby="emailHelp">
+
+                </div>
+
+                <br/>
+                <button type="submit" (click)="login()" class="btn btn-outline-primary btn-block">Iniciar
+                    Sesion</button>
+                <button type="submit" (click)="registrarse()"
+                    class="btn btn-outline-success btn-block">Registrarse</button>
+                <button type="submit" (click)="normal()" class="btn btn-outline-warning btn-block">Normal</button>
+                <button type="submit" (click)="triggerSnapshot()" class="btn btn-outline-danger btn-block">Captura</button>
+                <button type="submit" (click)="toggleWebcam()" class="btn btn-outline-danger btn-block">Activar</button>
+            </form>
+        </div>
+
+
+    </div>
+</div>
+
+<br/>
+<div class="form-group col align-self-end col-6 col-sm-6 col-md-4 col-lg-4" style=" margin-left: auto;
+margin-right: auto">
+  <webcam [height]="500" [width]="500" [trigger]="triggerObservable" (imageCapture)="handleImage($event)" *ngIf="showWebcam"
+          [allowCameraSwitch]="allowCameraSwitch" [switchCamera]="nextWebcamObservable"
+          [imageQuality]="1"
+          (cameraSwitched)="cameraWasSwitched($event)"
+          (initError)="handleInitError($event)"
+  ></webcam>
+</div>
+<h4 *ngIf="errors.length > 0">Messages:</h4>
+<ul *ngFor="let error of errors">
+  <li>{{error | json}}</li>
+</ul>

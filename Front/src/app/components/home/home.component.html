@@ -1,0 +1,49 @@
+<main-navbar></main-navbar>
+<div class="container" style="margin-top: 3%; margin-left: auto;
+  margin-right: auto">
+  <form>
+    <div class="form-row">
+      <div class="form-group  col-6 col-sm-6 col-md-4 col-lg-4" style=" margin-left: auto;
+        margin-right: auto">
+        <label for="inputNombre">nombre estudiante</label>
+        <input type="text" [(ngModel)]="nombre" name="nombre" class="form-control" id="inputNombre"
+          placeholder="estudiamte">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group  col-6 col-sm-6 col-md-4 col-lg-4" style=" margin-left: auto;
+      margin-right: auto">
+        <label for="inputCurso">curso</label>
+        <input type="text" [(ngModel)]="curso" name="curso" class="form-control" id="inputCurso"
+          placeholder="curso">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group  col-6 col-sm-6 col-md-4 col-lg-4" style=" margin-left: auto;
+        margin-right: auto">
+        <label for="inputSeccion4">Seccion</label>
+        <input type="text" [(ngModel)]="seccion" name="seccion" class="form-control" id="inputSeccion4" placeholder="Seccion">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group  col-6 col-sm-6 col-md-4 col-lg-4" style=" margin-left: auto;
+        margin-right: auto">
+        <label for="inputDia">dia</label>
+        <input type="text" [(ngModel)]="dia" name="dia" class="form-control" id="inputDia" placeholder="dia">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group  col-6 col-sm-6 col-md-4 col-lg-4" style=" margin-left: auto;
+        margin-right: auto">
+        <label for="inputHora">hora</label>
+        <input type="text" [(ngModel)]="hora" name="hora" class="form-control" id="inputHora" placeholder="hora">
+      </div>
+    </div>
+    <br>
+    <div class="form-group col align-self-end col-6 col-sm-6 col-md-4 col-lg-4" style=" margin-left: auto;
+    margin-right: auto">
+
+      <button (click)="asignar()" type="submit" class="btn btn-primary">Aceptar</button>
+    </div>
+  </form>
+</div>
